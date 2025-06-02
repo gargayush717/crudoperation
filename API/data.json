@@ -1,0 +1,29 @@
+{
+  "auth": [
+    {
+      "id": "c6f3",
+      "name": "Ayush",
+      "email": "Ayush123@gmail.com",
+      "pass": "asdfghj"
+    },
+ 
+ 
+ 
+ 
+    {
+      "id": "1c2d",
+      "name": "shubh",
+      "email": "shubh123@gmail.com",
+      "pass": "Ayush@00"
+    }
+  ],
+  "userdetails": [
+    {
+      "id": "1",
+      "name": "Ayush",
+      "age": 23,
+      "city": "bahadurgarh",
+      "email": "ayush123@gmail.com"
+    }
+  ]
+}
