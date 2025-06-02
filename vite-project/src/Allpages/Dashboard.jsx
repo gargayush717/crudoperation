@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Menu from './Menu';
 
 function Dashboard() {
 const navigate=useNavigate();
@@ -25,7 +27,8 @@ const navigate=useNavigate();
 
   return (
    <>
-   <h1>Dashboard</h1>
+   <Menu/>
+   <Outlet/>
    <input type="submit" value="Logout"  onClick={handlelogout}/>
    </>
   )
