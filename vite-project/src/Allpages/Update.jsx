@@ -13,7 +13,7 @@ let[city,setcity]=useState('');
 let[email,setemail]=useState('');
 let navigate = useNavigate();
 useEffect(()=>{
-axios.get("http://localhost:3000/userdetails/"+id).then((res)=>{
+axios.get("https://crudoperation-1.onrender.com/userdetails/"+id).then((res)=>{
 setname(res.data.name);
 setage(res.data.age);
 setcity(res.data.city);
@@ -23,7 +23,7 @@ setemail(res.data.email);
 },[])
  let updatedata=(e)=>{
   e.preventDefault();
-  axios.put("http://localhost:3000/userdetails/"+id,{
+  axios.put("https://crudoperation-1.onrender.com/userdetails/"+id,{
     name,age,city,email
   }).then((res)=>{
     navigate("/dashboard/read")

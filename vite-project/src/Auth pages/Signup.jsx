@@ -10,7 +10,7 @@ function Signup() {
      let navigate = useNavigate();
     const submit=(e)=>{
      e.preventDefault();
-    axios.post("http://localhost:3000/auth",{
+    axios.post("https://crudoperation-1.onrender.com/auth",{
       name,email,pass
     }).then(()=>{
       navigate("/")

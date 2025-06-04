@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 function Read() {
     let [totalres,settotalres]=useState([]);
-  useEffect(()=>{  axios.get("http://localhost:3000/userdetails").then((pro)=>{
+  useEffect(()=>{  axios.get("https://crudoperation-1.onrender.com/userdetails").then((pro)=>{
     settotalres(pro.data)
    
         })},[totalres])
 
         const deletedata=(data)=>{
-          axios.delete("http://localhost:3000/userdetails/"+data).then((res)=>{
+          axios.delete("https://crudoperation-1.onrender.com/userdetails/"+data).then((res)=>{
             Navigate('/dashboard/read')
           })
         }

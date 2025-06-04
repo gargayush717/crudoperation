@@ -12,7 +12,7 @@ function Create() {
 
     const submit=(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:3000/userdetails",{
+        axios.post("https://crudoperation-1.onrender.com/userdetails",{
 name,age,city,email
         }).then(()=>{
             navigate("/dashboard/read")

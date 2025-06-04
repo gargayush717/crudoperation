@@ -12,7 +12,7 @@ function Login() {
  let [loginerror,setloginerror]=useState(false);
  let navigate=useNavigate();
  useEffect(()=>{
-axios.get("http://localhost:3000/auth").then((res)=>{
+axios.get("https://crudoperation-1.onrender.com/auth").then((res)=>{
 settotalval(res.data);
 })
  },[]);

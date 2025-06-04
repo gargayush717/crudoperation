@@ -10,13 +10,13 @@ function Search() {
   let Navigate = useNavigate();
   const submit=(e)=>{
     e.preventDefault();
-    axios.get("http://localhost:3000/userdetails?name="+val).then((res)=>{
+    axios.get("https://crudoperation-1.onrender.com/userdetails?name="+val).then((res)=>{
 setfinaldata(res.data);
     })
     
   }
    const deletedata=(data)=>{
-          axios.delete("http://localhost:3000/userdetails/"+data).then((res)=>{
+          axios.delete("https://crudoperation-1.onrender.com/userdetails/"+data).then((res)=>{
             Navigate('/dashboard/read')
           })
         }
