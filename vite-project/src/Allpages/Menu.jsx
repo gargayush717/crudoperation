@@ -18,9 +18,6 @@ function Menu() {
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard/search">search</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/dashboard/update">Update</Link>
-        </li>
       </ul>
     </div>
   </div>

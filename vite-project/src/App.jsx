@@ -22,7 +22,7 @@ function App() {
     <Route index element={<Read/>}/>
     <Route path='read' element={<Read/>}/>
     <Route path='create' element={<Create/>}/>
-    <Route path='update' element={<Update/>}/>
+    <Route path='update/:id' element={<Update/>}/>
     <Route path='search' element={<Search/>}/>
     </Route>
     </Routes>
