@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
-
+import "./Signup.css"
 function Signup() {
   let [name,setname]=useState();
   let [email,setemail]=useState();
@@ -19,8 +19,13 @@ function Signup() {
     }
   return (
     <>
-    <div className='d-flex align-items-center' style={{height:'100vh'}}>
-        <form className='w-50 h-50 mx-auto ' method='post' onSubmit={submit}>
+    
+    <div className='Signupmain'>
+    <div className='d-flex form-div'>
+         <div>
+          <h1>Hii, New User <img className="hilogo" src="../public/hi.png" alt="..... " /></h1>
+      <div className='h-50 w-75'>
+        <form  method='post' onSubmit={submit}>
                 <div className="form-group">
     <label >Name</label>
     <input type="text" className="form-control" onChange={(e)=>{
@@ -32,7 +37,7 @@ setname(e.target.value)
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e)=>{
 setemail(e.target.value)
     }}/>
-    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+    <small id="emailHelp" className="form-text text-muted"><p className='notification'>We'll never share your email with anyone else.</p></small>
   </div>
   <div className="form-group">
     <label >Password</label>
@@ -48,8 +53,10 @@ setpass(e.target.value)
 
     </form>
     </div>
+    </div>
+    </div>
     
-    
+    </div>
     
     </>
   )

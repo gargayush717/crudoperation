@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import "./Login.css"
 
 function Login() {
  let [totalval,settotalval]=useState();
@@ -34,15 +35,20 @@ setloginerror(true);
    
   return (
     <>
-    <div className='d-flex align-items-center' style={{height:"100vh"}}>
-    <div className='h-50 w-50 mx-auto'>
+    <div className='main'>
+      
+     
+    <div className='d-flex  form-div'>
+        <div>
+        <h1>Hey, Welcome Back <img className='hilogo' src="../public/hi.png" alt="..... " /></h1>
+    <div className='h-50 w-75 '>
     <form onSubmit={userlogin}>
          <div className="form-group">
     <label >Email address</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e)=>{
 setemail(e.target.value);
     }}/>
-    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+    <small id="emailHelp" className="form-text "><p className='notification'>We'll never share your email with anyone else.</p></small>
   </div>
   <div className="form-group">
     <label >Password</label>
@@ -57,12 +63,14 @@ setpass(e.target.value)
   <button type="submit" className="btn btn-primary">Submit</button>
 
     </form>
-    <p>Don't have an account <Link to="/signup">Signup</Link></p>
+    <p className='signup-link'>Don't have an account <Link to="/signup" className='main-link'>Signup</Link></p>
     {loginerror?
     <span id="warningspan"style={{color:"red"}}>User not found</span>:""
 }
     </div>
     </div>
+    </div>
+   </div>
    
     </>
   )
