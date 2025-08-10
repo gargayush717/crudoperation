@@ -1,0 +1,43 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.search-input {
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-btn {
+  background-color: rgba(0, 123, 255, 0.8);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background-color: rgba(0, 123, 255, 1);
+  transform: scale(1.05);
+}
+
+/* Table styling same as Read.jsx ka glass theme */
+.custom-table {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  overflow: hidden;
+  color: white;
+}

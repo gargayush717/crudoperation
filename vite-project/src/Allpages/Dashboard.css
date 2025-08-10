@@ -1,0 +1,102 @@
+/* Page Background: Cyber-safety image */
+body {
+  background: url("https://www.kaseya.com/wp-content/uploads/2021/10/Data-security-concept-design-for-personal-privacy-data-protection-and-cyber-security.-Padlock-with-Keyhole-icon-on-blue-background..png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  color: #fff;
+}
+
+/* Wrapper for content */
+.dashboard-wrapper {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 95%;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+/* Transparent Table with full grid lines */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Table cells glass effect */
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  background-color: transparent; /* Remove white tint */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Bold and readable headers */
+th {
+  background-color: rgba(0, 123, 255, 0.3);
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Hover effect for rows */
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+}
+
+/* Buttons */
+button, input[type="submit"] {
+  background-color: rgba(0, 123, 255, 0.8);
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: rgba(0, 123, 255, 1);
+  transform: scale(1.05);
+}
+
+/* Logout button special color */
+input[type="submit"][value="Logout"] {
+  background-color: rgba(255, 75, 92, 0.8);
+}
+
+input[type="submit"][value="Logout"]:hover {
+  background-color: rgba(255, 75, 92, 1);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  tr {
+    margin-bottom: 15px;
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 6px;
+  }
+  th { display: none; }
+  td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: white;
+  }
+}

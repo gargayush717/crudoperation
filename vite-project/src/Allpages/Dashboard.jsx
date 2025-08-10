@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import Menu from './Menu';
+import './Dashboard.css';
 
 function Dashboard() {
 const navigate=useNavigate();
@@ -26,11 +27,13 @@ const navigate=useNavigate();
  
 
   return (
-   <>
-   <Menu/>
-   <Outlet/>
-   <input type="submit" value="Logout"  onClick={handlelogout}/>
-   </>
+<>
+  <Menu/>
+  <div className="dashboard-wrapper">
+    <Outlet/>
+    <input type="submit" value="Logout" onClick={handlelogout}/>
+  </div>
+</>
   )
 }
 

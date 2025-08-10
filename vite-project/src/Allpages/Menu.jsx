@@ -1,31 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Menu.css';
 
 function Menu() {
   return (
     <>
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <Link className="navbar-brand" to="/dashboard/read">Read</Link>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/dashboard/create">create</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/dashboard/search">search</Link>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    
-    
+      <nav className="navbar navbar-expand-lg custom-navbar">
+        <div className="container-fluid">
+          <div className="navbar-links d-flex align-items-center">
+            <Link className="navbar-brand brand-text" to="/dashboard/read">Read</Link>
+            <Link className="nav-link nav-text" to="/dashboard/create">Create</Link>
+            <Link className="nav-link nav-text" to="/dashboard/search">Search</Link>
+          </div>
+        </div>
+      </nav>
     </>
-  )
+  );
 }
 
-export default Menu
+export default Menu;

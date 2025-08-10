@@ -1,73 +1,80 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import './Search.css'; // styling ka import
 
 function Search() {
-  let [val,setval]=useState();
-  let [finaldata,setfinaldata]=useState();
+  let [val, setVal] = useState('');
+  let [finaldata, setFinaldata] = useState([]);
   let Navigate = useNavigate();
-  const submit=(e)=>{
+
+  const submit = (e) => {
     e.preventDefault();
-    axios.get("https://crudoperation-1.onrender.com/userdetails?name="+val).then((res)=>{
-setfinaldata(res.data);
-    })
-    
-  }
-   const deletedata=(data)=>{
-          axios.delete("https://crudoperation-1.onrender.com/userdetails/"+data).then((res)=>{
-            Navigate('/dashboard/read')
-          })
-        }
+    axios.get(`https://crudoperation-1.onrender.com/userdetails?name=${val}`).then((res) => {
+      setFinaldata(res.data);
+    });
+  };
+
+  const deletedata = (data) => {
+    axios.delete(`https://crudoperation-1.onrender.com/userdetails/${data}`).then(() => {
+      Navigate('/dashboard/read');
+    });
+  };
 
   return (
     <>
-    <form className="row g-3" onSubmit={submit}>
-  <div className="col-auto">
-    <input type="ptext" className="form-control" placeholder="Search name" onChange={(e)=>{
-setval(e.target.value)
-    }}/>
-  </div>
-  <div className="col-auto">
-    <button type="submit" className="btn btn-primary mb-3">Search</button>
-  </div>
-</form>
-    <div className='row p-4'>
-     <table className="table">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Name</th>
-      <th scope="col">Age</th>
-      <th scope="col">City</th>
-        <th scope="col">Email</th>
-         <th scope="col">Delete</th>
-          <th scope="col">Update</th>
-        
-    </tr>
-  </thead>
-  {finaldata?<tbody>
-    {finaldata.map((item)=>{
-return(
-   <tr key={item.id}>
-        <td>{item.id}</td>
-        <td>{item.name}</td>
-        <td>{item.age}</td>
-        <td>{item.city}</td>
-        <td>{item.email}</td>
-        <td><button  onClick={()=>deletedata(item.id)}>Delete</button></td>
-        <td><Link to={"/dashboard/update/"+item.id}><button>Update</button></Link></td>
-       
+      {/* Search Bar */}
+      <form className="search-form" onSubmit={submit}>
+        <input
+          type="text"
+          className="form-control search-input"
+          placeholder="Search by name"
+          onChange={(e) => setVal(e.target.value)}
+        />
+        <button type="submit" className="search-btn">Search</button>
+      </form>
 
-    </tr>
-)
-    })}
-  </tbody>:""}
-  </table>
-    </div>
+      {/* Table */}
+      <div className="row p-4">
+        <table className="table custom-table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>City</th>
+              <th>Email</th>
+              <th>Delete</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          {finaldata.length > 0 ? (
+            <tbody>
+              {finaldata.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.age}</td>
+                  <td>{item.city}</td>
+                  <td>{item.email}</td>
+                  <td>
+                    <button onClick={() => deletedata(item.id)}>Delete</button>
+                  </td>
+                  <td>
+                    <Link to={`/dashboard/update/${item.id}`}>
+                      <button>Update</button>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          ) : (
+            ''
+          )}
+        </table>
+      </div>
     </>
-  )
+  );
 }
 
-export default Search
+export default Search;
