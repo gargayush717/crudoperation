@@ -23,7 +23,7 @@ function Signup() {
     <div className='Signupmain'>
     <div className='d-flex form-div'>
          <div>
-          <h1>Hii, New User <img className="hilogo" src="../public/hi.png" alt="..... " /></h1>
+          <h1>Hii, New User <img className="hilogo" src="/hi.png" alt="..... " /></h1>
       <div className='h-50 w-75'>
         <form  method='post' onSubmit={submit}>
                 <div className="form-group">

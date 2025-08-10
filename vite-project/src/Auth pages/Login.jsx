@@ -40,7 +40,7 @@ setloginerror(true);
      
     <div className='d-flex  form-div'>
         <div>
-        <h1>Hey, Welcome Back <img className='hilogo' src="../public/hi.png" alt="..... " /></h1>
+        <h1>Hey, Welcome Back <img className='hilogo' src="/hi.png" alt="..... " /></h1>
     <div className='h-50 w-75 '>
     <form onSubmit={userlogin}>
          <div className="form-group">
